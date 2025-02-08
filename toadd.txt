@@ -1,0 +1,4 @@
+blog
+change enquiry to order
+add cat; fabric, artwork, beadwork
+  -> fabric s,m,l,xl,xxl  
