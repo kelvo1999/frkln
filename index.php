@@ -136,11 +136,17 @@ include('includes/dbconnection.php');
                      <h4 class="pt-3">Visuals Arts</h4>
                   </div>
                </div>
-               <div class="toys-grids-upper">
+               <div class="col-lg-4 col-md-6 col-sm-6 mt-3 text-center banner-agile-flowers">
+                  <img src="images/a6.jpg" width="500" height="200" class="img-thumbnail" alt="">
+                  <div class="banner-right-icon">
+                     <h4 class="pt-3">Visuals Arts</h4>
+                  </div>
+               </div>
+               <!-- <div class="toys-grids-upper">
                   <div class="about-toys-off">
                      <h2>Get Up to <span>70% Off </span>On Selected Art</h2>
                   </div>
-               </div>
+               </div> -->
             </div>
          </div>
       </section>
