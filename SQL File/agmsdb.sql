@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2025 at 11:43 PM
+-- Generation Time: Feb 21, 2025 at 01:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -195,7 +195,8 @@ CREATE TABLE `tblenquiry` (
 INSERT INTO `tblenquiry` (`ID`, `EnquiryNumber`, `Artpdid`, `FullName`, `Email`, `MobileNumber`, `Message`, `EnquiryDate`, `Status`, `AdminRemark`, `AdminRemarkdate`) VALUES
 (1, '230873611', 4, 'Anuj kumar', 'ak@test.com', 1234567890, 'This is for testing Purpose.', '2023-01-02 18:16:47', 'Answer', 'test purpose', '2023-01-01 18:30:00'),
 (2, '227883179', 5, 'Amit Kumar', 'amitk55@test.com', 1234434321, 'I want this painting', '2023-01-02 18:42:42', 'Answer', 'testing purpose', '2023-01-02 18:43:16'),
-(3, '963238481', 4, 'Hello ', 'hello@world.com', 200014578, 'Interested in this.', '2025-02-10 22:38:54', NULL, '', NULL);
+(3, '963238481', 4, 'Hello ', 'hello@world.com', 200014578, 'Interested in this.', '2025-02-10 22:38:54', NULL, '', NULL),
+(4, '964829141', 2, 'Kelvin', 'kelvoshisanya@gmail.com', 145236598, 'Hello, can i get more info on this particular piece, am placing an order on.', '2025-02-21 00:17:45', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -307,7 +308,7 @@ ALTER TABLE `tblarttype`
 -- AUTO_INCREMENT for table `tblenquiry`
 --
 ALTER TABLE `tblenquiry`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tblpage`
