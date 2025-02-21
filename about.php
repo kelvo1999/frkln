@@ -79,22 +79,19 @@ while ($row=mysqli_fetch_array($ret)) {
                   <div class="col-lg-4 col-md-4 abut-gride">
                      <span class="fas fa-truck"></span>
                      <h5>Shipping</h5>
-                     <p class="mt-3"> velit sagittis vehicula. Duis posuere 
-                        ex in mollis iaculis. Suspendisse tincidunt
+                     <p class="mt-3"> After a successful order placement, the item selected will be shipped to the destination as per communicated by the client.
                      </p>
                   </div>
                   <div class="col-lg-4 col-md-4 abut-gride">
                      <span class="fas fa-phone-volume"></span>  
                      <h5>Support</h5>
-                     <p class="mt-3"> velit sagittis vehicula. Duis posuere 
-                        ex in mollis iaculis. Suspendisse tincidunt
+                     <p class="mt-3"> Reach to us via email or phone for immediate support
                      </p>
                   </div>
                   <div class="col-lg-4 col-md-4 abut-gride">
                      <span class="fas fa-undo"></span>
                      <h5> Return</h5>
-                     <p class="mt-3"> velit sagittis vehicula. Duis posuere 
-                        ex in mollis iaculis. Suspendisse tincidunt
+                     <p class="mt-3"> We have a return policy and it is instructed in the T&C's page. 
                      </p>
                   </div>
                </div>

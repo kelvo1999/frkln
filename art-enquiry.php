@@ -27,7 +27,7 @@ echo "<script>window.location.href='index.php'</script>";
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
-      <title>Art Gallery Management System | Art Enquiry</title>
+      <title>Art Gallery Management System | Art Order</title>
       
       <script>
          addEventListener("load", function () {
@@ -68,7 +68,7 @@ echo "<script>window.location.href='index.php'</script>";
                   <a href="index.php">Home</a>
                   <span>/ /</span>
                </li>
-               <li>Enquiry</li>
+               <li>Order</li>
             </ul>
          </div>
       </div>
@@ -76,7 +76,7 @@ echo "<script>window.location.href='index.php'</script>";
       <!--contact -->
       <section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
          <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Enquiry</h3>
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Place Order</h3>
             <div class="contact-list-grid">
                <form action="#" method="post">
                   <div class=" agile-wls-contact-mid">
@@ -92,7 +92,7 @@ echo "<script>window.location.href='index.php'</script>";
                      <div class="form-group contact-forms">
                        <textarea class="form-control" name="message" placeholder="Message" required="true" rows="4"></textarea>
                      </div>
-                     <button type="submit" class="btn btn-block sent-butnn" name="send">Send</button>
+                     <button type="submit" class="btn btn-block sent-butnn" name="send">Plcae Order</button>
                   </div>
                </form>
             </div>
