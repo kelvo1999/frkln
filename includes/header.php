@@ -54,7 +54,7 @@ while ($row=mysqli_fetch_array($ret)) {
                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                            <?php
-                                    $ret=mysqli_query($con,"select * from tblarttype");
+                                    $ret=mysqli_query($con,"select * from tblfashion");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
