@@ -80,6 +80,8 @@
             <ul class="sub">
               <li><a class="" href="aboutus.php"><span>About Us</span></a></li>
               <li><a class="" href="contactus.php"><span>Contact Us</span></a></li>
+              <li><a class="" href="fashion.php"><span>Fashion</span></a></li>
+              <li><a class="" href="blog.php"><span>Blog</span></a></li>
               
             </ul>
           </li>
