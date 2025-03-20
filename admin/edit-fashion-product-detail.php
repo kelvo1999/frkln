@@ -1,9 +1,6 @@
 <?php
 session_start();
-// error_reporting(0);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
+error_reporting(0);
 include('includes/dbconnection.php');
 if (strlen($_SESSION['agmsaid']==0)) {
   header('location:logout.php');
@@ -12,7 +9,7 @@ if (strlen($_SESSION['agmsaid']==0)) {
 
 if(isset($_POST['submit']))
   {
-    $aid=$_SESSION['agmsaid'];
+   
     $title=$_POST['title'];
     $dimension=$_POST['dimension'];
     $orientation=$_POST['orientation'];
@@ -22,81 +19,19 @@ if(isset($_POST['submit']))
     $artmed=$_POST['artmed'];
     $sprice=$_POST['sprice'];
     $description=$_POST['description'];
-    $refno=mt_rand(100000000, 999999999);
-//featured Image
-$pic=$_FILES["images"]["name"];
-$extension = substr($pic,strlen($pic)-4,strlen($pic));
-//Image 1
-$pic1=$_FILES["image1"]["name"];
-$extension1 = substr($pic1,strlen($pic1)-4,strlen($pic1));
-//Image 2
-$pic2=$_FILES["image2"]["name"];
-$extension2 = substr($pic2,strlen($pic2)-4,strlen($pic2));
-//Image 3
-$pic3=$_FILES["image3"]["name"];
-$extension3 = substr($pic3,strlen($pic3)-4,strlen($pic3));
-//Image 4
-$pic4=$_FILES["image4"]["name"];
-$extension4 = substr($pic4,strlen($pic4)-4,strlen($pic4));
-
-// allowed extensions
-$allowed_extensions = array(".jpg","jpeg",".png",".gif");
-// Validation for allowed extensions .in_array() function searches an array for a specific value.
-if(!in_array($extension,$allowed_extensions))
-{
-echo "<script>alert('Featured image has Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
-}
-//if(!in_array($extension1,$allowed_extensions))
-//{
-//echo "<script>alert('Image 1 has Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
-//}
-//if(!in_array($extension2,$allowed_extensions))
-//{
-//echo "<script>alert('Image 2 has Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
-//}
-//if(!in_array($extension3,$allowed_extensions))
-//{
-//echo "<script>alert('Image 3 has Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
-//}
-//if(!in_array($extension4,$allowed_extensions))
-//{
-//echo "<script>alert('Image 4 has Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
-//}
-else
-{
-//rename art images
-$pic=md5($pic).time().$extension;
-//$pic1=md5($pic1).time().$extension1;
-//$pic2=md5($pic2).time().$extension2;
-//$pic3=md5($pic3).time().$extension3;
-//$pic4=md5($pic4).time().$extension4;
-     move_uploaded_file($_FILES["images"]["tmp_name"],"images/".$pic);
-     //move_uploaded_file($_FILES["image1"]["tmp_name"],"images/".$pic1);
-     //move_uploaded_file($_FILES["image2"]["tmp_name"],"images/".$pic2);
-     //move_uploaded_file($_FILES["image3"]["tmp_name"],"images/".$pic3);
-     //move_uploaded_file($_FILES["image4"]["tmp_name"],"images/".$pic4);
-//     $query=mysqli_query($con, "insert into tblfashionproduct(Title,Dimension,Orientation,Size,Designer,Type,ArtMedium,SellingPricing,Description,Image,Image1,Image2,Image3,Image4,RefNum) value('$title','$dimension','$orientation','$size','$artist','$arttype','$artmed','$sprice','$description','$pic','$pic1','$pic2','$pic3','$pic4','$refno')");
-//     if ($query) {
-// echo "<script>alert('Fashion product details has been submitted.');</script>";
-// echo "<script>window.location.href ='manage-fashion-product.php'</script>";
-//   }
-//   else
-//     {
-//       echo "<script>alert('Something Went Wrong. Please try again.');</script>";
-//     }
-$query = mysqli_query($con, "INSERT INTO tblfashionproduct (Title, Dimension, Orientation, Size, Designer, Type, ArtMedium, SellingPricing, Description, Image, Image1, Image2, Image3, Image4, RefNum) VALUES ('$title', '$dimension', '$orientation', '$size', '$artist', '$arttype', '$artmed', '$sprice', '$description', '$pic', '$pic1', '$pic2', '$pic3', '$pic4', '$refno')");
-
-if ($query) {
-    echo "<script>alert('Fashion product details have been submitted.');</script>";
-    echo "<script>window.location.href ='manage-fashion-product.php'</script>";
-} else {
-    echo "<script>alert('Something Went Wrong. Please try again.');</script>";
-}
-
-
+    $eid=$_GET['editid'];
+    $query=mysqli_query($con, "update tblfashionproduct set Title='$title',Dimension='$dimension',Orientation='$orientation',Size='$size',Designer='$artist',Type='$arttype',Material='$artmed',SellingPricing='$sprice',Description='$description' where ID='$eid'");
+    if ($query) {
+  
+    echo "<script>alert('Fashion has been updated.');</script>";
   }
-}
-  ?>
+  else
+    {
+      echo "<script>alert('Something Went Wrong. Please try again.');</script>";
+    }
+  }
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -137,60 +72,66 @@ if ($query) {
           </div>
         </div>
         <div class="row">      
-        <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+          <form class="form-horizontal " method="post" action="" enctype="multipart/form-data">
+            <?php
+ $cid=$_GET['editid'];
+$ret=mysqli_query($con,"select tblfashion.ID as atid,tblfashion.Type as typename,tblfashionmaterial.ID as amid,tblfashionmaterial.Material as amname,tblfashionproduct.ID as apid,designer.ID as arid,designer.Name,tblfashionproduct.Title,tblfashionproduct.Dimension,tblfashionproduct.Orientation,tblfashionproduct.Size,tblfashionproduct.Designer,tblfashionproduct.Type,tblfashionproduct.Material,tblfashionproduct.SellingPricing,tblfashionproduct.Description,tblfashionproduct.Image,tblfashionproduct.Image1,tblfashionproduct.Image2,tblfashionproduct.Image3,tblfashionproduct.Image4,tblfashionproduct.RefNum,tblfashionproduct.Type from tblfashionproduct join tblfashion on tblfashion.ID=tblfashionproduct.Type join tblfashionmaterial on tblfashionmaterial.ID=tblfashionproduct.Material join tblartist on tblartist.ID=tblfashionproduct.Artist where tblfashionproduct.ID='$cid'");
+$cnt=1;
+while ($row=mysqli_fetch_array($ret)) {
 
+?>
           <div class="col-lg-6">
             <section class="panel">
               <header class="panel-heading">
-                Add Fashion Product Detail
+                Update Fashion Product Detail
               </header>
               <div class="panel-body">
                   
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Title</label>
                     <div class="col-sm-10">
-                      <input class="form-control" id="title" name="title" placeholder="name of the item" type="text" required="true" />
+                      <input class="form-control" id="title" name="title"  type="text" required="true" value="<?php  echo $row['Title'];?>" />
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Featured Image</label>
                     <div class="col-sm-10">
-                       <input type="file" class="form-control" name="images" id="images" value="" required="true">
+                     <img src="images/<?php echo $row['Image'];?>" width="200" height="150" value="<?php  echo $row['Image'];?>"><a href="changeimage.php?editid=<?php echo $row['apid'];?>"> &nbsp; Edit Image</a>
                     </div>
                   </div>
 
     <div class="form-group">
                     <label class="col-sm-2 control-label">Fashion Product Image1</label>
                     <div class="col-sm-10">
-                       <input type="file" class="form-control" name="image1" id="image1" value="">
+                      <img src="images/<?php echo $row['Image1'];?>" width="200" height="150" value="<?php  echo $row['Image1'];?>"><a href="changeimage1.php?editid=<?php echo $row['apid'];?>"> &nbsp; Edit Image</a>
                     </div>
                   </div>
 
   <div class="form-group">
                     <label class="col-sm-2 control-label">Fashion Product Image2</label>
                     <div class="col-sm-10">
-                       <input type="file" class="form-control" name="image2" id="image2" value="">
+                       <img src="images/<?php echo $row['Image2'];?>" width="200" height="150" value="<?php  echo $row['Image2'];?>"><a href="changeimage2.php?editid=<?php echo $row['apid'];?>"> &nbsp; Edit Image</a>
                     </div>
                   </div>
 
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Fashion Product Image3</label>
                     <div class="col-sm-10">
-                       <input type="file" class="form-control" name="image3" id="image3" value="">
+                       <img src="images/<?php echo $row['Image3'];?>" width="200" height="150" value="<?php  echo $row['Image3'];?>"><a href="changeimage3.php?editid=<?php echo $row['apid'];?>"> &nbsp; Edit Image</a>
                     </div>
                   </div>
 
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Fashion Product Image4</label>
                     <div class="col-sm-10">
-                       <input type="file" class="form-control" name="image4" id="image4" value="">
+                      <img src="images/<?php echo $row['Image4'];?>" width="200" height="150" value="<?php  echo $row['Image4'];?>"><a href="changeimage4.php?editid=<?php echo $row['apid'];?>"> &nbsp; Edit Image</a>
                     </div>
                   </div>
 
 <div class="form-group">
                     <label class="col-sm-2 control-label">Dimension</label>
                     <div class="col-sm-10">
-                      <input class="form-control" id="dimension" name="dimension"  type="text" required="true">
+                      <input class="form-control" id="dimension" name="dimension"  type="text" required="true" value="<?php  echo $row['Dimension'];?>">
                     </div>
                   </div>
  </div>
@@ -204,10 +145,9 @@ if ($query) {
                     <label class="col-sm-2 control-label">Orientation</label>
                     <div class="col-sm-10">
                       <select class="form-control" id="orientation" name="orientation"  required="true">
-                        <option value="">Choose orientation</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Unisex">Unisex</option>
+                        <option value="<?php  echo $row['Orientation'];?>"><?php  echo $row['Orientation'];?></option>
+                        <option value="Potrait">Potrait</option>
+                        <option value="Landscape">Landscape</option>
                         
                       </select>
                     </div>
@@ -217,13 +157,10 @@ if ($query) {
                     <label class="col-sm-2 control-label">Size</label>
                     <div class="col-sm-10">
                       <select class="form-control" id="size" name="size"  required="true">
-                        <option value="">Choose Size</option>
+                        <option value="<?php  echo $row['Size'];?>"><?php  echo $row['Size'];?></option>
                         <option value="Small">Small</option>
                         <option value="Medium">Medium</option>
                         <option value="Large">Large</option>
-                        <option value="Large">XLarge</option>
-                        <option value="Large">XXLarge</option>
-                        <option value="Large">All Sizes</option>
                       </select>
                     </div>
                   </div>
@@ -231,40 +168,40 @@ if ($query) {
                     <label class="col-sm-2 control-label">Designer</label>
                     <div class="col-sm-10">
                       <select class="form-control m-bot15" name="artist" id="artist">
-                                <option value="">Choose Designer</option>
-                                <?php $query=mysqli_query($con,"select * from designer");
-              while($row=mysqli_fetch_array($query))
+                                <option value="<?php  echo $row['arid'];?>"><?php  echo $row['Name'];?></option>
+                                <?php $query1=mysqli_query($con,"select * from designer");
+              while($row1=mysqli_fetch_array($query1))
               {
               ?>    
-              <option value="<?php echo $row['ID'];?>"><?php echo $row['Name'];?></option>
+              <option value="<?php echo $row1['ID'];?>"><?php echo $row1['Name'];?></option>
                   <?php } ?> 
                             </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Fashion Type</label>
+                    <label class="col-sm-2 control-label"> Type</label>
                     <div class="col-sm-10">
                       <select class="form-control m-bot15" name="arttype" id="arttype">
-                                <option value="">Choose Fashion Type</option>
-                                <?php $query=mysqli_query($con,"select * from tblfashion");
-              while($row=mysqli_fetch_array($query))
+                                <option value="<?php  echo $row['atid'];?>"><?php  echo $row['Type'];?></option>
+                                <?php $query2=mysqli_query($con,"select * from tblfashion");
+              while($row2=mysqli_fetch_array($query2))
               {
               ?>    
-              <option value="<?php echo $row['ID'];?>"><?php echo $row['Type'];?></option>
+              <option value="<?php echo $row2['ID'];?>"><?php echo $row2['Type'];?></option>
                   <?php } ?> 
                             </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Fashion Material</label>
+                    <label class="col-sm-2 control-label">Material</label>
                     <div class="col-sm-10">
                       <select class="form-control m-bot15" name="artmed" id="artmed">
-                                <option value="">Choose Material</option>
-                                <?php $query=mysqli_query($con,"select * from tblfashionmaterial");
-              while($row=mysqli_fetch_array($query))
+                                <option value="<?php  echo $row['amid'];?>"><?php  echo $row['Material'];?></option>
+                                <?php $query3=mysqli_query($con,"select * from tblfashionmaterial");
+              while($row3=mysqli_fetch_array($query3))
               {
               ?>    
-              <option value="<?php echo $row['ID'];?>"><?php echo $row['Material'];?></option>
+              <option value="<?php echo $row3['ID'];?>"><?php echo $row3['Material'];?></option>
                   <?php } ?> 
                             </select>
                     </div>
@@ -274,20 +211,21 @@ if ($query) {
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Selling Price</label>
                     <div class="col-sm-10">
-                      <input class="form-control " id="sprice" type="text" name="sprice" required="true">
+                      <input class="form-control " id="sprice" type="text" name="sprice" required="true" value="<?php  echo $row['SellingPricing'];?>">
                     </div>
                   </div>
                 
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Fashion Product Description</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control " id="description" type="text" name="description" rows="12" cols="4" required="true"></textarea>
+                      <textarea class="form-control " id="description" type="text" name="description" rows="12" cols="4" required="true"><?php  echo $row['Description'];?></textarea>
                     </div>
                   </div>
               </div>
             </section>
             
           </div>
+          <?php } ?>
                <p style="text-align: center;"> <button type="submit" name='submit' class="btn btn-primary">Submit</button></p>
               </form>
         </div>

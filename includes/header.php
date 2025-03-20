@@ -43,9 +43,9 @@ while ($row=mysqli_fetch_array($ret)) {
                         <a href="about.php" class="nav-link">About</a>
                      </li>
                     
-                     <!-- <li class="nav-item">
-                        <a href="fashion.php" class="nav-link">Fashion</a>
-                     </li> -->
+                     <li class="nav-item">
+                        <a href="fashion.php" class="nav-link">Foundation</a>
+                     </li>
 
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,9 +70,10 @@ while ($row=mysqli_fetch_array($ret)) {
                     
                     
                      
+                     <!-- <li class="nav-item">Gallery -->
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Art Type
+                        Gallery
                         </a>
                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -86,6 +87,7 @@ while ($row=mysqli_fetch_array($ret)) {
                           <?php } ?>
                         </div>
                      </li>
+                     
                      <li class="nav-item">
                         <a href="contact.php" class="nav-link">Contact</a>
                      </li>

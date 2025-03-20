@@ -1,12 +1,14 @@
 <?php
 session_start();
-error_reporting(0);
+// error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include('includes/dbconnection.php');
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
-      <title>Art Gallery Management System | Fashion</title>
+      <title>Art Gallery Management System | Single Product</title>
      
       <script>
          addEventListener("load", function () {
@@ -63,9 +65,8 @@ include('includes/dbconnection.php');
             <div class="inner-sec-shop pt-lg-4 pt-3">
                <?php
                $pid=$_GET['pid'];
-               $ret=mysqli_query($con,"select tblfashion.ID as atid,tblfashion.Type as typename,tblfashionmaterial.ID as amid,tblfashionmaterial.Material as amname,tblfashionproduct.ID as apid,designer.Name,tblfashionproduct.Title,tblfashionproduct.Dimension,tblfashionproduct.Orientation,tblfashionproduct.Size,tblfashionproduct.Artist,tblfashionproduct.Type,tblfashionproduct.Material,tblfashionproduct.SellingPricing,tblfashionproduct.Description,tblfashionproduct.Image,tblfashionproduct.Image1,tblfashionproduct.Image2,tblfashionproduct.Image3,tblfashionproduct.Image4,tblfashionproduct.RefNum,tblfashionproduct.Type from tblfashionproduct join tblfashion on tblfashion.ID=tblfashionproduct.Type join tblfashionmaterial on tblfashionmaterial.ID=tblfashionproduct.Material join designer on designer.ID=tblfashionproduct.Artist where tblfashionproduct.ID='$pid'");
-
-               $cnt=1;
+$ret=mysqli_query($con,"select tblfashion.ID as atid,tblfashion.Type as typename,tblfashionmaterial.ID as amid,tblfashionmaterial.Material as amname,tblfashionproduct.ID as apid,designer.Name,tblfashionproduct.Title,tblfashionproduct.Dimension,tblfashionproduct.Orientation,tblfashionproduct.Size,tblfashionproduct.Designer,tblfashionproduct.Type,tblfashionproduct.ArtMedium,tblfashionproduct.SellingPricing,tblfashionproduct.Description,tblfashionproduct.Image,tblfashionproduct.Image1,tblfashionproduct.Image2,tblfashionproduct.Image3,tblfashionproduct.Image4,tblfashionproduct.RefNum,tblfashionproduct.Type from tblfashionproduct join tblfashion on tblfashion.ID=tblfashionproduct.Type join tblfashionmaterial on tblfashionmaterial.ID=tblfashionproduct.ArtMedium join designer on designer.ID=tblfashionproduct.Designer where tblfashionproduct.ID='$pid'");
+$cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 ?>
                <div class="row">
@@ -120,7 +121,7 @@ while ($row=mysqli_fetch_array($ret)) {
                         </div>
                      </div>
                      <div class="occasional">
-                        <h5> Types : <?php echo $row['typename'];?></h5>
+                        <h5>Types : <?php echo $row['typename'];?></h5>
                        
                        <h5>Material : <?php echo $row['amname'];?></h5>
                        <h5>Reference Number : <?php echo $row['RefNum'];?></h5>

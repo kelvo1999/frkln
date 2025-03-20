@@ -95,8 +95,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="add-Fashion-product.php">Add Product</a></li>
-              <li><a class="" href="manage-Fashion-product.php">Manage Product</a></li>
+              <li><a class="" href="add-fashion-product.php">Add Product</a></li>
+              <li><a class="" href="manage-fashion-product.php">Manage Product</a></li>
             </ul>
           </li>
           <li class="sub-menu">

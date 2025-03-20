@@ -145,6 +145,19 @@ $aenqcount=mysqli_num_rows($query1);
         <div class="row">
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">
+              <?php $query2=mysqli_query($con,"Select * from tblfashion");
+$artcount=mysqli_num_rows($query2);
+?>
+              <i class="fa fa-file"></i>
+              <div class="count"><?php echo $artcount;?></div>
+             <div class="title"> <a class="dropdown-item" href="manage-fashion-type.php">Total Fashion Type</a></div>
+            </div>
+            <!--/.info-box-->
+          </div>
+          <!--/.col-->
+        <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box dark-bg">
               <?php $query2=mysqli_query($con,"Select * from tblarttype");
 $artcount=mysqli_num_rows($query2);
 ?>
@@ -168,6 +181,18 @@ $amcount=mysqli_num_rows($query1);
             <!--/.info-box-->
           </div>
           <!--/.col-->
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <?php $query1=mysqli_query($con,"Select * from tblfashionmaterial");
+$amcount=mysqli_num_rows($query1);
+?>
+              <i class="fa fa-file"></i>
+              <div class="count"><?php echo $amcount;?></div>
+              <div class="title"> <a class="dropdown-item" href="manage-fashion-material.php">Total Fashion Materials</a></div>
+            </div>
+            <!--/.info-box-->
+          </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">

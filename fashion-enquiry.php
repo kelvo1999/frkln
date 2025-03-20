@@ -5,14 +5,16 @@ include('includes/dbconnection.php');
 if(isset($_POST['send']))
   {
     $fullname=$_POST['fullname'];
+    $size=$_POST['size'];
+    $orders=$_POST['orders'];
     $email=$_POST['email'];
     $mobilenumber=$_POST['mobnum'];
     $message=$_POST['message'];
     $enquirynumber = mt_rand(100000000, 999999999);
 $eid=$_GET['eid'];
-    $query1=mysqli_query($con,"insert into  tblenquiry(Artpdid,FullName,Email,MobileNumber,Message,EnquiryNumber) value('$eid','$fullname','$email','$mobilenumber','$message','$enquirynumber')");
+    $query1=mysqli_query($con,"insert into  tblfashionenquiry(Artpdid,FullName,Size,Orders,Email,MobileNumber,Message,EnquiryNumber) value('$eid','$fullname','$size','$orders','$email','$mobilenumber','$message','$enquirynumber')");
         if ($query1) {
- echo '<script>alert("Your enquiry successfully send. Your Enquiry number is "+"'.$enquirynumber.'")</script>';
+ echo '<script>alert("Your order was successfully placed. Your Order number is "+"'.$enquirynumber.'")</script>';
 echo "<script>window.location.href='index.php'</script>";
   }
   else
@@ -82,6 +84,20 @@ echo "<script>window.location.href='index.php'</script>";
                   <div class=" agile-wls-contact-mid">
                      <div class="form-group contact-forms">
                        <input class="form-control" type="text" name="fullname" required="true" placeholder="Name"/>
+                     </div>
+                     <div class="form-group contact-forms">
+                     <select class="form-control" id="size" name="size"  required="true">
+                        <option value="">Choose Size</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Large">XLarge</option>
+                        <option value="Large">XXLarge</option>
+                        <!-- <option value="Large">All Sizes</option> -->
+                      </select>
+                     </div>
+                     <div class="form-group contact-forms">
+                        <input class="form-control" type="number" name="orders" required="true" placeholder="Number of orders"/>
                      </div>
                      <div class="form-group contact-forms">
                         <input class="form-control" type="email" name="email" required="true" placeholder="Email"/>
