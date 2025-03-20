@@ -56,6 +56,51 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Designer</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-designer.php">Add designer</a></li>
+              <li><a class="" href="manage-designer.php">Manage designer</a></li>
+             
+            </ul>
+          </li>
+  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Fashion Type</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-Fashion-type.php">Add Type</a></li>
+              <li><a class="" href="manage-Fashion-type.php">Manage Type</a></li>
+            </ul>
+          </li>
+<li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Material</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-Fashion-Material.php">Add Material</a></li>
+              <li><a class="" href="manage-Fashion-Material.php">Manage Material</a></li>
+            </ul>
+          </li>
+ <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Products</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-Fashion-product.php">Add Product</a></li>
+              <li><a class="" href="manage-Fashion-product.php">Manage Product</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
                           <i class="icon_table"></i>
                           <span>Enquiry</span>
                           <span class="menu-arrow arrow_carrot-right"></span>

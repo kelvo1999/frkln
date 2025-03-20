@@ -84,11 +84,34 @@ $artcount=mysqli_num_rows($query);
 ?>
              <i class="fa fa-user"></i>
               <div class="count"><?php echo $artcount;?></div>
-              <div class="title"> <a class="dropdown-item" href="manage-artist.php">Total Artist</a></div>
+              <div class="title"> <a class="dropdown-item" href="manage-artist.php">Total Artists</a></div>
             </div>
             <!--/.info-box-->
           </div>
           <!--/.col-->
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box green-bg">
+              <?php $query=mysqli_query($con,"Select * from designer");
+$artcount=mysqli_num_rows($query);
+?>
+             <i class="fa fa-user"></i>
+              <div class="count"><?php echo $artcount;?></div>
+              <div class="title"> <a class="dropdown-item" href="manage-designer.php">Total Designers</a></div>
+            </div>
+            <!--/.info-box-->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <?php $query1=mysqli_query($con,"Select * from tblenquiry where Status='' || Status is null");
+$uenqcount=mysqli_num_rows($query1);
+?>
+              <i class="fa fa-file"></i>
+              <div class="count"><?php echo $uenqcount;?></div>
+              <div class="title"> <a class="dropdown-item" href="unanswer-enquiry.php">Total Unanswer Enquiry</a></div>
+            </div>
+            <!--/.info-box-->
+          </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="info-box brown-bg">
