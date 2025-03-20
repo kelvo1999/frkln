@@ -9,31 +9,27 @@ if (strlen($_SESSION['agmsaid']==0)) {
 
 if(isset($_POST['submit']))
   {
-    
-    $arttype=$_POST['arttype'];
-    
+    $artmed=$_POST['artmed'];
   $eid=$_GET['editid'];
    
-    $query=mysqli_query($con, "update tblfashion set Type='$arttype' where ID='$eid'");
+    $query=mysqli_query($con, "update tblfashionmaterial set Material='$artmed' where ID='$eid'");
     if ($query) {
   
-    echo "<script>alert('Fashion has been updated.');</script>";
-    echo "<script>window.location.href = 'manage-fashion-type.php'</script>"; 
+    echo "<script>alert('Fashion Material has been updated.');</script>";
+    echo "<script>window.location.href = 'manage-fashion-material.php'</script>"; 
   }
   else
     {
       echo "<script>alert('Something Went Wrong. Please try again.');</script>";
     }
-
   }
-
   ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   
-  <title>Update Fashion Type | FRKLN FOUNDATION</title>
+  <title>Update Fashion Material | Art Gallery Management System</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -73,11 +69,11 @@ if(isset($_POST['submit']))
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-file-text-o"></i>Update Fashion Type Details</h3>
+            <h3 class="page-header"><i class="fa fa-file-text-o"></i>Update Fashion Material Detail</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="dashboard.php">Home</a></li>
-              <li><i class="icon_document_alt"></i>Update Fashion Type</li>
-              <li><i class="fa fa-file-text-o"></i>Update Fashion Type Detail</li>
+              <li><i class="icon_document_alt"></i>Update Fashion Material</li>
+              <li><i class="fa fa-file-text-o"></i>Update Fashion Material Detail</li>
             </ol>
           </div>
         </div>
@@ -85,7 +81,7 @@ if(isset($_POST['submit']))
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-               Update Fashion Type Detail
+               Update Fashion Material Detail
               </header>
               <div class="panel-body">
                 <form class="form-horizontal " method="post" action="">
@@ -93,15 +89,15 @@ if(isset($_POST['submit']))
 
   <?php
  $cid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from tblfashion where ID='$cid'");
+$ret=mysqli_query($con,"select * from tblfashionmaterial where ID='$cid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Fashion Type</label>
+                    <label class="col-sm-2 control-label">Fashion Material</label>
                     <div class="col-sm-10">
-                      <input class="form-control" id="arttype" name="arttype"  type="text" required="true" value="<?php  echo $row['Type'];?>">
+                      <input class="form-control" id="artmed" name="artmed"  type="text" required="true" value="<?php  echo $row['Material'];?>">
                     </div>
                   </div>
                    
