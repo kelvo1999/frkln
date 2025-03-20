@@ -73,7 +73,7 @@ while ($row=mysqli_fetch_array($ret)) {
                      <!-- <li class="nav-item">Gallery -->
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gallery
+                        Art Types
                         </a>
                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
