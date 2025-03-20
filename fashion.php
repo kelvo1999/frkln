@@ -60,7 +60,7 @@ include('includes/dbconnection.php');
       <!--show Now-->  
       <section class="contact py-lg-4">
          <div class="container-fluid py-lg-5">
-            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center"><?php echo $_GET['clothe'];?></h2>
+            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center"><?php echo $_GET['Type'];?></h2>
                <hr />
             <div class="row">
                <div class="side-bar col-lg-3">
@@ -122,7 +122,7 @@ while ($row=mysqli_fetch_array($ret)) {
                                     <div class="grid_meta">
                                        <div class="product_price">
                                           <h4 >
-                                             <a href="single-product.php?pid=<?php  echo $row['fashid'];?>" style="color:#000"><?php  echo $row['Title'];?></a>
+                                             <a href="single-fashion.php?pid=<?php  echo $row['fashid'];?>" style="color:#000"><?php  echo $row['Title'];?></a>
                                           </h4>
                                           <div class="product_price">
                                              <h4>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2025 at 01:27 AM
+-- Generation Time: Mar 19, 2025 at 03:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `agmsdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `designer`
+--
+
+CREATE TABLE `designer` (
+  `ID` int(10) NOT NULL,
+  `Name` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `Education` mediumtext DEFAULT NULL,
+  `Award` mediumtext DEFAULT NULL,
+  `Profilepic` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `designer`
+--
+
+INSERT INTO `designer` (`ID`, `Name`, `MobileNumber`, `Email`, `Education`, `Award`, `Profilepic`, `CreationDate`) VALUES
+(1, 'Mohan Das', 7987987987, 'mohan@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in drawing and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ecebbecf28c2692aeb021597fbddb174.jpg', '2022-12-21 10:31:25'),
+(2, 'Dev', 3287987987, 'dev@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(3, 'Kanha', 9687987987, 'kanha@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(4, 'Abir Rajwansh', 5687987987, 'abir@gmail.com', 'Completed his fine arts from klijfine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(5, 'Krisna Dutt', 9187987987, 'krish@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(6, 'Kajol Mannati', 8187987987, 'kajol@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(7, 'Meera Singh', 2987987987, 'meera@gmail.com', 'Fine Arts in Painting from College of Art, New Delhi in 2012,\r\nSpecialized in printmaking and ceramic.', 'award-winning artist, and has received a scholarship from the Ministry of Culture, Government of India in 2014 as well as the Jean-Claude Reynal Scholarship (France) in 2019.\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(8, 'Narayan Das', 9987987987, 'narayan@gmail.com', 'Completed his fine arts from hjai fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Young Artist Award in 2009, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36');
 
 -- --------------------------------------------------------
 
@@ -160,13 +192,14 @@ CREATE TABLE `tblarttype` (
 --
 
 INSERT INTO `tblarttype` (`ID`, `ArtType`, `CreationDate`) VALUES
-(1, 'Sculptures', '2022-12-21 14:21:13'),
+(1, 'Sculptures / Woodworking', '2022-12-21 14:21:13'),
 (2, 'Serigraphs', '2022-12-21 14:24:46'),
-(3, 'Prints', '2022-12-21 14:25:00'),
-(4, 'Painting', '2022-12-21 14:25:31'),
+(4, 'Painting/ Drawing', '2022-12-21 14:25:31'),
 (5, 'Street Art', '2022-12-21 14:26:06'),
-(6, 'Visual art ', '2022-12-21 14:26:29'),
-(7, 'Conceptual art', '2022-12-21 14:26:45');
+(7, 'Conceptual art', '2022-12-21 14:26:45'),
+(12, 'Doodling/ Mandala', '2025-03-19 13:52:33'),
+(14, 'Photography', '2025-03-19 13:55:08'),
+(15, 'Glass Art', '2025-03-19 13:55:22');
 
 -- --------------------------------------------------------
 
@@ -201,6 +234,101 @@ INSERT INTO `tblenquiry` (`ID`, `EnquiryNumber`, `Artpdid`, `FullName`, `Email`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblfashion`
+--
+
+CREATE TABLE `tblfashion` (
+  `ID` int(5) NOT NULL,
+  `Type` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfashion`
+--
+
+INSERT INTO `tblfashion` (`ID`, `Type`, `CreationDate`) VALUES
+(1, 'T-Shirts', '2022-12-21 11:21:13'),
+(2, 'Hoodies', '2022-12-21 11:24:46'),
+(3, 'Flannels', '2022-12-21 11:25:00'),
+(4, 'Jackets', '2022-12-21 11:25:31'),
+(5, 'Trench Coats', '2022-12-21 11:26:06'),
+(6, 'Shoes ', '2022-12-21 11:26:29'),
+(7, 'Socks ', '2022-12-21 11:26:29'),
+(8, 'Trousers', '2022-12-21 11:26:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfashionmaterial`
+--
+
+CREATE TABLE `tblfashionmaterial` (
+  `ID` int(5) NOT NULL,
+  `Material` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfashionmaterial`
+--
+
+INSERT INTO `tblfashionmaterial` (`ID`, `Material`, `CreationDate`) VALUES
+(1, 'Linen', '2025-03-19 11:08:22'),
+(2, 'Cashmere wool', '2025-03-19 11:08:22'),
+(3, 'Cotton', '2025-03-19 11:08:22'),
+(4, 'Cellulosic fibres/viscose', '2025-03-19 11:08:22'),
+(5, 'Wool', '2025-03-19 11:08:22'),
+(6, 'Hemp', '2025-03-19 11:08:22'),
+(7, 'Ramie', '2025-03-19 11:08:22'),
+(8, 'Silk', '2025-03-19 11:08:22'),
+(9, 'Leather', '2025-03-19 11:08:22'),
+(10, 'Down for down-filled parkas', '2025-03-19 11:08:22'),
+(11, 'Fur', '2025-03-19 11:08:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfashionproduct`
+--
+
+CREATE TABLE `tblfashionproduct` (
+  `ID` int(5) NOT NULL,
+  `Title` varchar(250) DEFAULT NULL,
+  `Dimension` varchar(250) DEFAULT NULL,
+  `Orientation` varchar(100) DEFAULT NULL,
+  `Size` varchar(100) DEFAULT NULL,
+  `Designer` int(5) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `ArtMedium` int(5) DEFAULT NULL,
+  `SellingPricing` decimal(10,0) DEFAULT NULL,
+  `Description` mediumtext DEFAULT NULL,
+  `Image` varchar(250) DEFAULT NULL,
+  `Image1` varchar(250) DEFAULT NULL,
+  `Image2` varchar(250) DEFAULT NULL,
+  `Image3` varchar(250) DEFAULT NULL,
+  `Image4` varchar(250) DEFAULT NULL,
+  `RefNum` int(10) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfashionproduct`
+--
+
+INSERT INTO `tblfashionproduct` (`ID`, `Title`, `Dimension`, `Orientation`, `Size`, `Designer`, `Type`, `ArtMedium`, `SellingPricing`, `Description`, `Image`, `Image1`, `Image2`, `Image3`, `Image4`, `RefNum`, `CreationDate`) VALUES
+(1, 'Classic T-Shirt', 'M', 'Unisex', 'Medium', 1, 'T-Shirts', 2, 1500, 'A stylish and comfortable cotton T-shirt.', 'tshirt.jpg', NULL, NULL, NULL, NULL, 101, '2025-03-19 10:50:13'),
+(2, 'Cozy Hoodie', 'L', 'Unisex', 'Large', 2, 'Hoodies', 3, 3000, 'Warm and soft hoodie with a modern fit.', 'hoodie.jpg', NULL, NULL, NULL, NULL, 102, '2025-03-19 10:50:13'),
+(3, 'Plaid Flannel', 'M', 'Men', 'Medium', 3, 'Flannels', 4, 2500, 'Classic flannel shirt with checkered design.', 'flannel.jpg', NULL, NULL, NULL, NULL, 103, '2025-03-19 10:50:13'),
+(4, 'Denim Jacket', 'L', 'Men', 'Large', 4, 'Jackets', 1, 4000, 'Stylish denim jacket perfect for all seasons.', 'jacket.jpg', NULL, NULL, NULL, NULL, 104, '2025-03-19 10:50:13'),
+(5, 'Elegant Trench Coat', 'XL', 'Women', 'Extra Large', 5, 'Trench Coats', 2, 7500, 'Elegant and sleek trench coat for a refined look.', 'trenchcoat.jpg', NULL, NULL, NULL, NULL, 105, '2025-03-19 10:50:13'),
+(6, 'Sneakers', '42', 'Unisex', 'Size 42', 6, 'Shoes', 3, 5000, 'Trendy sneakers for casual wear.', 'shoes.jpg', NULL, NULL, NULL, NULL, 106, '2025-03-19 10:50:13'),
+(7, 'Crew Socks', 'One Size', 'Unisex', 'One Size', 7, 'Socks', 1, 500, 'Comfortable and breathable crew socks.', 'socks.jpg', NULL, NULL, NULL, NULL, 107, '2025-03-19 10:50:13'),
+(8, 'Slim Fit Trousers', '32', 'Men', 'Size 32', 8, 'Trousers', 4, 3500, 'Slim fit trousers suitable for formal and casual occasions.', 'trousers.jpg', NULL, NULL, NULL, NULL, 108, '2025-03-19 10:50:13');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblpage`
 --
 
@@ -221,7 +349,9 @@ CREATE TABLE `tblpage` (
 
 INSERT INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`, `Timing`) VALUES
 (1, 'aboutus', 'About Us', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">An art gallery is&nbsp;</span><b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display and sell artworks</b><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. As a result, the art gallery is a commercial enterprise working with a portfolio of artists. The gallery acts as the dealer representing, supporting, and distributing the artworks by the artists in question.</span><br>', NULL, NULL, NULL, ''),
-(2, 'contactus', 'Contact Us', 'Thika_RD,Nairobi,Kenya', 'info@gmail.com', 1234567890, NULL, '10:30 am to 5:30 pm');
+(2, 'contactus', 'Contact Us', 'Thika_RD,Nairobi,Kenya', 'info@gmail.com', 1234567890, NULL, '10:30 am to 5:30 pm'),
+(3, 'fashion', 'Fashion', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Fashion in its sense&nbsp;</span><b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display all your fashion and style</b><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. Here you will find different forms of fashion and style of your liking</span><br>', NULL, NULL, NULL, ''),
+(4, 'blog', 'Blog', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">An art gallery is&nbsp;</span>\r\n<b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display and sell artworks</b>\r\n<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. As a result, the art gallery is a commercial enterprise working with a portfolio of artists. The gallery acts as the dealer representing, supporting, and distributing the artworks by the artists in question.</span><br>', NULL, NULL, NULL, '');
 
 --
 -- Indexes for dumped tables
@@ -265,6 +395,18 @@ ALTER TABLE `tblenquiry`
   ADD KEY `CardId` (`Artpdid`);
 
 --
+-- Indexes for table `tblfashionmaterial`
+--
+ALTER TABLE `tblfashionmaterial`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tblfashionproduct`
+--
+ALTER TABLE `tblfashionproduct`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblpage`
 --
 ALTER TABLE `tblpage`
@@ -302,7 +444,7 @@ ALTER TABLE `tblartproduct`
 -- AUTO_INCREMENT for table `tblarttype`
 --
 ALTER TABLE `tblarttype`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tblenquiry`
@@ -311,10 +453,22 @@ ALTER TABLE `tblenquiry`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tblfashionmaterial`
+--
+ALTER TABLE `tblfashionmaterial`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tblfashionproduct`
+--
+ALTER TABLE `tblfashionproduct`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `tblpage`
 --
 ALTER TABLE `tblpage`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,7 +26,7 @@ while ($row=mysqli_fetch_array($ret)) {
             <div class="container-fluid">
                <div class="hedder-up row">
                   <div class="col-lg-3 col-md-3 logo-head">
-                     <h1><a class="navbar-brand" href="index.php">FRNKL ART GALORE</a></h1>
+                     <h1><a class="navbar-brand" href="index.php">FRNKL FOUNDATION</a></h1>
                   </div>
                </div>
             </div>
@@ -59,7 +59,7 @@ $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
-                           <a class="nav-link" href="product.php?cid=<?php  echo $row['ID'];?>&&artname=<?php  echo $row['ArtType'];?>"><?php  echo $row['ArtType'];?></a>
+                           <a class="nav-link" href="fashion.php?cid=<?php  echo $row['ID'];?>&&fashionname=<?php  echo $row['Type'];?>"><span class="span"><?php  echo $row['Type'];?></span></a>
                           <?php } ?>
                         </div>
                      </li>

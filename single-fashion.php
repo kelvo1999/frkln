@@ -131,7 +131,7 @@ while ($row=mysqli_fetch_array($ret)) {
                      <div class="occasion-cart">
                         <div>
                            <h4>
-                                             <button class="btn btn-success"><a href="art-enquiry.php?eid=<?php echo $row['apid'];?>" >Order</a></button></h4>
+                                             <button class="btn btn-success"><a href="fashion-enquiry.php?eid=<?php echo $row['apid'];?>" >Purchase</a></button></h4>
                           
                         </div>
                      </div>

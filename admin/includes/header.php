@@ -15,7 +15,7 @@ $name=$row['AdminName'];
 
 ?>
       <!--logo start-->
-      <a href="dashboard.php" class="logo"><span class="lite"><strong> ART GALLERY | Admin</strong></span></a>
+      <a href="dashboard.php" class="logo"><span class="lite"><strong> FRNKL FOUNDATION | Admin</strong></span></a>
       <!--logo end-->
 
       
