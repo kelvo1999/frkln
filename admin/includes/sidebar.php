@@ -110,6 +110,18 @@
               <li><a class="" href="answer-enquiry.php">Answered Enquiry</a></li>
             </ul>
           </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_table"></i>
+                          <span>Orders</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="total-fashion-enquiry.php">All Orders</a></li>
+              <li><a class="" href="unanswer-fashion-enquiry.php">Placed Orders</a></li>
+              <li><a class="" href="answer-fashion-enquiry.php">Delivered Order</a></li>
+            </ul>
+          </li>
 <li>
             <a class="" href="search.php">
                           <i class="icon_genius"></i>
