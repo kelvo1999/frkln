@@ -7,7 +7,8 @@
 }
 
 .logo-text {
-    font-size: 28px;
+    font-size: 18px;
+    font-family:'Limelight';
     font-weight: bold;
     color: white;
 }

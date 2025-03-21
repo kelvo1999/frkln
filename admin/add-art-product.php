@@ -100,6 +100,7 @@ echo "<script>window.location.href ='add-art-product.php'</script>";
   <link href="css/bootstrap-colorpicker.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 <body>
   <section id="container" class="">

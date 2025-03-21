@@ -53,6 +53,7 @@ echo "<script>window.location.href='index.php'</script>";
       <!--//stylesheets-->
       <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
       <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+      <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
    </head>
    <body>
       <?php include_once('includes/header.php');?>

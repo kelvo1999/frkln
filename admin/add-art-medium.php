@@ -44,6 +44,7 @@ echo "<script>window.location.href ='manage-art-medium.php'</script>";
   <link href="css/daterangepicker.css" rel="stylesheet" />
   <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
   <link href="css/bootstrap-colorpicker.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
   <!-- date picker -->
 
   <!-- color picker -->

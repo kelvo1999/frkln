@@ -57,6 +57,7 @@ $query = mysqli_query($con, "UPDATE tblpage SET PageTitle='$pagetitle', PageDesc
   <link href="css/style-responsive.css" rel="stylesheet" />
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 </head>
 
 <body>
