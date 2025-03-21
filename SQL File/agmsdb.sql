@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2025 at 03:02 PM
+-- Generation Time: Mar 21, 2025 at 03:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -51,7 +51,8 @@ INSERT INTO `designer` (`ID`, `Name`, `MobileNumber`, `Email`, `Education`, `Awa
 (6, 'Kajol Mannati', 8187987987, 'kajol@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
 (7, 'Meera Singh', 2987987987, 'meera@gmail.com', 'Fine Arts in Painting from College of Art, New Delhi in 2012,\r\nSpecialized in printmaking and ceramic.', 'award-winning artist, and has received a scholarship from the Ministry of Culture, Government of India in 2014 as well as the Jean-Claude Reynal Scholarship (France) in 2019.\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
 (8, 'Narayan Das', 9987987987, 'narayan@gmail.com', 'Completed his fine arts from hjai fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Young Artist Award in 2009, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
-(11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36');
+(11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36'),
+(0, 'Click Bait', 125469857, 'click@bait.com', 'A bachelors degree in marketing', 'Graduate', 'afbba823125a264290029f5b571c75c5.jpg', '2025-03-20 11:53:59');
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,7 @@ INSERT INTO `tblarttype` (`ID`, `ArtType`, `CreationDate`) VALUES
 (2, 'Serigraphs', '2022-12-21 14:24:46'),
 (4, 'Painting/ Drawing', '2022-12-21 14:25:31'),
 (5, 'Street Art', '2022-12-21 14:26:06'),
-(7, 'Conceptual art', '2022-12-21 14:26:45'),
+(7, 'Conceptual art/ Illustration', '2022-12-21 14:26:45'),
 (12, 'Doodling/ Mandala', '2025-03-19 13:52:33'),
 (14, 'Photography', '2025-03-19 13:55:08'),
 (15, 'Glass Art', '2025-03-19 13:55:22');
@@ -255,7 +256,42 @@ INSERT INTO `tblfashion` (`ID`, `Type`, `CreationDate`) VALUES
 (5, 'Trench Coats', '2022-12-21 11:26:06'),
 (6, 'Shoes ', '2022-12-21 11:26:29'),
 (7, 'Socks ', '2022-12-21 11:26:29'),
-(8, 'Trousers', '2022-12-21 11:26:45');
+(8, 'Trousers', '2022-12-21 11:26:45'),
+(0, 'Sweatpants', '2025-03-20 07:29:34'),
+(0, 'Camera', '2025-03-20 11:54:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfashionenquiry`
+--
+
+CREATE TABLE `tblfashionenquiry` (
+  `ID` int(10) NOT NULL,
+  `EnquiryNumber` varchar(10) NOT NULL,
+  `Artpdid` int(9) DEFAULT NULL,
+  `FullName` varchar(120) DEFAULT NULL,
+  `Size` varchar(255) NOT NULL,
+  `Orders` int(10) NOT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `Message` varchar(250) DEFAULT NULL,
+  `EnquiryDate` timestamp NULL DEFAULT current_timestamp(),
+  `Status` varchar(10) DEFAULT NULL,
+  `AdminRemark` varchar(200) NOT NULL,
+  `AdminRemarkdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfashionenquiry`
+--
+
+INSERT INTO `tblfashionenquiry` (`ID`, `EnquiryNumber`, `Artpdid`, `FullName`, `Size`, `Orders`, `Email`, `MobileNumber`, `Message`, `EnquiryDate`, `Status`, `AdminRemark`, `AdminRemarkdate`) VALUES
+(0, '882239381', 14, 'Cleophas Malala', 'Large', 5, 'cleo@malala.com', 758462515, 'Please i want the blue and red ones', '2025-03-20 13:16:58', 'Answer', 'Packaged for delivery', '2025-03-21 13:03:31'),
+(0, '679035060', 14, 'Cleo Malala', 'Large', 5, 'cleo@malala.com', 125487896, 'Yeap', '2025-03-20 13:18:37', 'Answer', 'Packaged for delivery', '2025-03-21 13:03:31'),
+(0, '767202686', 14, 'Frank', 'Large', 5, 'frank@frank.com', 125487956, 'PLease deliver', '2025-03-20 13:51:21', 'Answer', 'Packaged for delivery', '2025-03-21 13:03:31'),
+(0, '705762499', 14, 'Kelvin', 'Large', 2, 'kelvoshisanya@gmail.com', 145236589, 'OrderOrderOrderOrderOrderOrder\r\n', '2025-03-21 13:11:38', NULL, '', NULL),
+(0, '533949296', 15, 'Collins', 'Large', 5, 'collins@koech', 125485645, 'orderorderorderorderorderorderorderorder', '2025-03-21 13:47:47', NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -274,7 +310,7 @@ CREATE TABLE `tblfashionmaterial` (
 --
 
 INSERT INTO `tblfashionmaterial` (`ID`, `Material`, `CreationDate`) VALUES
-(1, 'Linen', '2025-03-19 11:08:22'),
+(1, 'Fine Linen', '2025-03-19 11:08:22'),
 (2, 'Cashmere wool', '2025-03-19 11:08:22'),
 (3, 'Cotton', '2025-03-19 11:08:22'),
 (4, 'Cellulosic fibres/viscose', '2025-03-19 11:08:22'),
@@ -284,7 +320,8 @@ INSERT INTO `tblfashionmaterial` (`ID`, `Material`, `CreationDate`) VALUES
 (8, 'Silk', '2025-03-19 11:08:22'),
 (9, 'Leather', '2025-03-19 11:08:22'),
 (10, 'Down for down-filled parkas', '2025-03-19 11:08:22'),
-(11, 'Fur', '2025-03-19 11:08:22');
+(11, 'Fur', '2025-03-19 11:08:22'),
+(12, 'Beads', '2025-03-20 11:54:42');
 
 -- --------------------------------------------------------
 
@@ -298,11 +335,11 @@ CREATE TABLE `tblfashionproduct` (
   `Dimension` varchar(250) DEFAULT NULL,
   `Orientation` varchar(100) DEFAULT NULL,
   `Size` varchar(100) DEFAULT NULL,
-  `Designer` int(5) DEFAULT NULL,
+  `Designer` varchar(255) DEFAULT NULL,
   `Type` varchar(50) DEFAULT NULL,
-  `ArtMedium` int(5) DEFAULT NULL,
+  `ArtMedium` varchar(255) DEFAULT NULL,
   `SellingPricing` decimal(10,0) DEFAULT NULL,
-  `Description` mediumtext DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
   `Image` varchar(250) DEFAULT NULL,
   `Image1` varchar(250) DEFAULT NULL,
   `Image2` varchar(250) DEFAULT NULL,
@@ -317,14 +354,10 @@ CREATE TABLE `tblfashionproduct` (
 --
 
 INSERT INTO `tblfashionproduct` (`ID`, `Title`, `Dimension`, `Orientation`, `Size`, `Designer`, `Type`, `ArtMedium`, `SellingPricing`, `Description`, `Image`, `Image1`, `Image2`, `Image3`, `Image4`, `RefNum`, `CreationDate`) VALUES
-(1, 'Classic T-Shirt', 'M', 'Unisex', 'Medium', 1, 'T-Shirts', 2, 1500, 'A stylish and comfortable cotton T-shirt.', 'tshirt.jpg', NULL, NULL, NULL, NULL, 101, '2025-03-19 10:50:13'),
-(2, 'Cozy Hoodie', 'L', 'Unisex', 'Large', 2, 'Hoodies', 3, 3000, 'Warm and soft hoodie with a modern fit.', 'hoodie.jpg', NULL, NULL, NULL, NULL, 102, '2025-03-19 10:50:13'),
-(3, 'Plaid Flannel', 'M', 'Men', 'Medium', 3, 'Flannels', 4, 2500, 'Classic flannel shirt with checkered design.', 'flannel.jpg', NULL, NULL, NULL, NULL, 103, '2025-03-19 10:50:13'),
-(4, 'Denim Jacket', 'L', 'Men', 'Large', 4, 'Jackets', 1, 4000, 'Stylish denim jacket perfect for all seasons.', 'jacket.jpg', NULL, NULL, NULL, NULL, 104, '2025-03-19 10:50:13'),
-(5, 'Elegant Trench Coat', 'XL', 'Women', 'Extra Large', 5, 'Trench Coats', 2, 7500, 'Elegant and sleek trench coat for a refined look.', 'trenchcoat.jpg', NULL, NULL, NULL, NULL, 105, '2025-03-19 10:50:13'),
-(6, 'Sneakers', '42', 'Unisex', 'Size 42', 6, 'Shoes', 3, 5000, 'Trendy sneakers for casual wear.', 'shoes.jpg', NULL, NULL, NULL, NULL, 106, '2025-03-19 10:50:13'),
-(7, 'Crew Socks', 'One Size', 'Unisex', 'One Size', 7, 'Socks', 1, 500, 'Comfortable and breathable crew socks.', 'socks.jpg', NULL, NULL, NULL, NULL, 107, '2025-03-19 10:50:13'),
-(8, 'Slim Fit Trousers', '32', 'Men', 'Size 32', 8, 'Trousers', 4, 3500, 'Slim fit trousers suitable for formal and casual occasions.', 'trousers.jpg', NULL, NULL, NULL, NULL, 108, '2025-03-19 10:50:13');
+(14, 'Classic Cotton T-Shirt', 'All Fit Sizes available', 'Unisex', 'Large', '11', '1', '3', 1500, 'Welcome to drip world', 'afbba823125a264290029f5b571c75c51742475837.jpg', '', '', '', '', 264151985, '2025-03-20 13:03:57'),
+(15, 'Pretty Dress', 'Classy, Sexy', 'Female', 'Large', '0', '0', '1', 500, 'Let the feminine in you shout out', 'b48cf4aa4b861353111a9303b3b5a6e31742477073.jpg', '', '', '', '', 332504013, '2025-03-20 13:24:33'),
+(16, 'Jack&Jones Hoodie', 'Wooosshhhh', 'Unisex', 'Large', '11', '2', '5', 1500, 'Kick the cold with style', 'a58a4fc611108b424637f1702c4e683f1742477308.png', '', '', '', '', 144338609, '2025-03-20 13:28:28'),
+(17, 'Flannel', 'Wooshhhh', 'Unisex', 'Large', '11', '3', '', 700, 'Hot for sweater cold for shirt? Rock in these.', '1fe91ff7b726d88c2172ab05a1090b131742477503.jpg', '', '', '', '', 881517991, '2025-03-20 13:31:43');
 
 -- --------------------------------------------------------
 
@@ -336,7 +369,7 @@ CREATE TABLE `tblpage` (
   `ID` int(10) NOT NULL,
   `PageType` varchar(200) DEFAULT NULL,
   `PageTitle` mediumtext DEFAULT NULL,
-  `PageDescription` mediumtext DEFAULT NULL,
+  `PageDescription` longtext DEFAULT NULL,
   `Email` varchar(200) DEFAULT NULL,
   `MobileNumber` bigint(10) DEFAULT NULL,
   `UpdationDate` date DEFAULT NULL,
@@ -348,7 +381,7 @@ CREATE TABLE `tblpage` (
 --
 
 INSERT INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`, `MobileNumber`, `UpdationDate`, `Timing`) VALUES
-(1, 'aboutus', 'About Us', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">An art gallery is&nbsp;</span><b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display and sell artworks</b><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. As a result, the art gallery is a commercial enterprise working with a portfolio of artists. The gallery acts as the dealer representing, supporting, and distributing the artworks by the artists in question.</span><br>', NULL, NULL, NULL, ''),
+(1, 'aboutus', 'About Us', '<div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">At <b>FRNKL</b>, we are a vibrant hub that celebrates <i><b>creativity, expression, </b>and<b> the power of art</b></i> to connect, inspire, and uplift communities. Our organization proudly manages a diverse range of initiatives, including an <b><i>art gallery, a donations program, a talent showcase</i></b></span></font><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;</span><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\"><b><i>and a blog</i></b> dedicated to <i><b>poetry and storytelling</b></i>. Each of these elements contributes to our mission of fostering an inclusive and supportive environment for emerging and established artists, writers, and performers.</span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">Our gallery is a platform for visual artists to display their work and connect with an appreciative audience. We curate exhibitions that highlight both local and global talent, showcasing a wide array of mediums, styles, and voices. The gallery serves as a space where creativity meets community, providing artists with the opportunity to engage with visitors, share their stories, and inspire conversation.</span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">We believe in the power of giving. The donations program supports the arts by providing funding and resources to emerging artists, community projects, and creative initiatives. Contributions from individuals and organizations allow us to continue to grow our programs and extend our impact, helping to nurture the next generation of creative talent.</span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">Our talent program is designed to give individuals in various fields—whether it\'s visual arts, music, dance, or performance—the opportunity to showcase their skills. Through workshops, performances, and collaborations, we aim to empower individuals to hone their craft, build confidence, and find their voice in the creative world.</span></font></div><div style=\"text-align: center;\"><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\"><br></span></div><div style=\"text-align: center;\"><span style=\"font-size: 16px; color: rgb(32, 33, 36); font-family: arial, sans-serif;\">For our blog, it\'s a space for writers of all backgrounds to share their poetry, short stories, and creative prose. Through our blog, we encourage literary exploration, providing a platform for voices that reflect a wide range of experiences and perspectives. Whether you\'re a seasoned writer or someone just beginning to explore the world of storytelling, our blog is an open and supportive space for you to express yourself.</span></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\"><br></span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">At <b>FRNKL</b>, we are dedicated to <i><b>nurturing talent, fostering artistic growth, and promoting the arts</b></i> in all its forms.&nbsp;</span></font></div><div style=\"text-align: center;\"><font color=\"#202124\" face=\"arial, sans-serif\"><span style=\"font-size: 16px;\">Join us on our journey as we continue to create opportunities for artistic expression, cultural exchange, and community engagement.</span></font></div>', NULL, NULL, NULL, ''),
 (2, 'contactus', 'Contact Us', 'Thika_RD,Nairobi,Kenya', 'info@gmail.com', 1234567890, NULL, '10:30 am to 5:30 pm'),
 (3, 'fashion', 'Fashion', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Fashion in its sense&nbsp;</span><b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display all your fashion and style</b><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. Here you will find different forms of fashion and style of your liking</span><br>', NULL, NULL, NULL, ''),
 (4, 'blog', 'Blog', '<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">An art gallery is&nbsp;</span>\r\n<b style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">an exhibition space to display and sell artworks</b>\r\n<span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">. As a result, the art gallery is a commercial enterprise working with a portfolio of artists. The gallery acts as the dealer representing, supporting, and distributing the artworks by the artists in question.</span><br>', NULL, NULL, NULL, '');
@@ -456,13 +489,13 @@ ALTER TABLE `tblenquiry`
 -- AUTO_INCREMENT for table `tblfashionmaterial`
 --
 ALTER TABLE `tblfashionmaterial`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tblfashionproduct`
 --
 ALTER TABLE `tblfashionproduct`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tblpage`
