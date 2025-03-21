@@ -1,6 +1,8 @@
 <?php
 session_start();
-error_reporting(0);
+// error_reporting(0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include('includes/dbconnection.php');
 if (strlen($_SESSION['agmsaid']==0)) {
  header('location:logout.php');
@@ -9,10 +11,16 @@ if (strlen($_SESSION['agmsaid']==0)) {
   {
 
 $agmsaid=$_SESSION['agmsaid'];
- $pagetitle=$_POST['pagetitle'];
-$pagedes=$_POST['pagedes'];
+//  $pagetitle=$_POST['pagetitle'];
+// $pagedes=$_POST['pagedes'];
 
- $query=mysqli_query($con,"update tblpage set PageTitle='$pagetitle',PageDescription='$pagedes' where  PageType='aboutus'");
+$pagetitle = mysqli_real_escape_string($con, $_POST['pagetitle']);
+$pagedes = mysqli_real_escape_string($con, $_POST['pagedes']);
+
+$query = mysqli_query($con, "UPDATE tblpage SET PageTitle='$pagetitle', PageDescription='$pagedes' WHERE PageType='aboutus'");
+// mysqli_query($con, $query) or die(mysqli_error($con));
+
+//  $query=mysqli_query($con,"update tblpage set PageTitle='$pagetitle',PageDescription='$pagedes' where  PageType='aboutus'");
 
     if ($query) {
    

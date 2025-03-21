@@ -66,7 +66,7 @@ while ($row=mysqli_fetch_array($ret)) {
 ?>
             <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3"><?php  echo $row['PageTitle'];?></h3>
             <div class="about-innergrid-agile text-center">
-               <h4>Welcome To Our Gallery</h4>
+               <h4>Welcome To FRNKL FOUNDATION</h4>
                <p class="mb-3"> <?php  echo $row['PageDescription'];?>
                </p><br><?php } ?>
                <div class=" img-toy-w3l-top">

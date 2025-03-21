@@ -1,4 +1,27 @@
+<style>
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between the text and the logo */
+}
 
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-img {
+    width: 50px;  /* Adjust size */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+</style>
          <div class="header-bar">
             <div class="info-top-grid">
                <div class="info-contact-agile">
@@ -23,13 +46,31 @@ while ($row=mysqli_fetch_array($ret)) {
                   </ul><?php } ?>
                </div>
             </div>
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                <div class="hedder-up row">
                   <div class="col-lg-3 col-md-3 logo-head">
-                     <h1><a class="navbar-brand" href="index.php">FRNKL FOUNDATION</a></h1>
+                     
+                     <h1>
+                     
+                        <a class="navbar-brand" href="index.php"><img src="../images/logo.png" alt="Logo" srcset="" style='border-radius:50%;width: 200px;height: 200px;'>FRNKL FOUNDATION</a></h1>
                   </div>
                </div>
-            </div>
+            </div> -->
+            <div class="container-fluid">
+    <div class="hedder-up row">
+        <div class="col-lg-3 col-md-3 logo-head text-center">
+            <h1 class="logo-container">
+                <!-- <img class="logo-img" src="images/logo1.png" alt="Logo"> -->
+                <span class="logo-text"> <a href="index.php">FRNKL</a> </span>
+                <a href="index.php"> <img class="logo-img" src="images/logo1.png" alt="Logo"> </a>
+                 <span class="logo-text"><a href="index.php">FOUNDATION </a></span>
+            </h1>
+        </div>
+    </div>
+</div>
+
+
+
             <nav class="navbar navbar-expand-lg navbar-light">
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
