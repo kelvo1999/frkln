@@ -2,6 +2,8 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
+include('side-bar-art.php');
+
 if (strlen($_SESSION['agmsaid']==0)) {
   header('location:logout.php');
   } 

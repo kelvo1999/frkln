@@ -12,16 +12,16 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>Artist</span>
+                          <span>Art Menu</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="add-artist.php">Add Artist</a></li>
-              <li><a class="" href="manage-artist.php">Manage Artist</a></li>
+              <li><a class="" href="side-bar-art.php">Art Menu</a></li>
+              <!-- <li><a class="" href="manage-artist.php">Manage Artist</a></li> -->
              
             </ul>
           </li>
-                <li class="sub-menu">
+              <!--   <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
                           <span>Art Type</span>
@@ -52,15 +52,15 @@
             <ul class="sub">
               <li><a class="" href="add-art-product.php">Add Product</a></li>
               <li><a class="" href="manage-art-product.php">Manage Product</a></li>
-            </ul>
-          </li>
+            </ul>-->
+          </li> 
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>Designer</span>
+                          <span>Fashion</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-            <ul class="sub">
+            <!-- <ul class="sub">
               <li><a class="" href="add-designer.php">Add designer</a></li>
               <li><a class="" href="manage-designer.php">Manage designer</a></li>
              
@@ -97,52 +97,7 @@
             <ul class="sub">
               <li><a class="" href="add-fashion-product.php">Add Product</a></li>
               <li><a class="" href="manage-fashion-product.php">Manage Product</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_desktop"></i>
-                          <span>Blog</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-artist.php">Add Artist</a></li>
-              <li><a class="" href="manage-blog-artist.php">Manage Artists</a></li>
-             
-            </ul>
-          </li>
-  <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Blog Type</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-type.php">Add Type</a></li>
-              <li><a class="" href="manage-blog-type.php">Manage Type</a></li>
-            </ul>
-          </li>
-<li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Genre</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-genre.php">Add Genre</a></li>
-              <li><a class="" href="manage-blog-genre.php">Manage Genre</a></li>
-            </ul>
-          </li>
- <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Blog Pieces</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-fashion-product.php">Add Piece</a></li>
-              <li><a class="" href="manage-fashion-product.php">Manage Pieces</a></li>
-            </ul>
+            </ul> -->
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
@@ -155,7 +110,7 @@
               <li><a class="" href="answer-enquiry.php">Answered Enquiry</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
+          <!-- <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_table"></i>
                           <span>Orders</span>
@@ -166,7 +121,7 @@
               <li><a class="" href="unanswer-fashion-enquiry.php">Placed Orders</a></li>
               <li><a class="" href="answer-fashion-enquiry.php">Delivered Order</a></li>
             </ul>
-          </li>
+          </li> -->
 <li>
             <a class="" href="search.php">
                           <i class="icon_genius"></i>

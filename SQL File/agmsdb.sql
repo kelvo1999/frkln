@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2025 at 03:02 PM
+-- Generation Time: Mar 24, 2025 at 09:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `agmsdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artist`
+--
+
+CREATE TABLE `artist` (
+  `ID` int(10) NOT NULL,
+  `Name` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `Education` mediumtext DEFAULT NULL,
+  `Award` mediumtext DEFAULT NULL,
+  `Profilepic` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -201,6 +218,76 @@ INSERT INTO `tblarttype` (`ID`, `ArtType`, `CreationDate`) VALUES
 (12, 'Doodling/ Mandala', '2025-03-19 13:52:33'),
 (14, 'Photography', '2025-03-19 13:55:08'),
 (15, 'Glass Art', '2025-03-19 13:55:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblblog`
+--
+
+CREATE TABLE `tblblog` (
+  `ID` int(5) NOT NULL,
+  `Type` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblblog`
+--
+
+INSERT INTO `tblblog` (`ID`, `Type`, `CreationDate`) VALUES
+(1, 'Poems', '2025-03-21 08:21:13'),
+(2, 'Stories', '2025-03-21 08:24:46'),
+(3, 'Words to Think About', '2025-03-21 08:25:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblblogmaterial`
+--
+
+CREATE TABLE `tblblogmaterial` (
+  `ID` int(5) NOT NULL,
+  `Material` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblblogmaterial`
+--
+
+INSERT INTO `tblblogmaterial` (`ID`, `Material`, `CreationDate`) VALUES
+(1, 'Love', '2025-03-19 08:08:22'),
+(2, 'War', '2025-03-19 08:08:22'),
+(3, 'Romance', '2025-03-19 08:08:22'),
+(4, 'Politics', '2025-03-19 08:08:22'),
+(5, 'Religion', '2025-03-19 08:08:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblblogproduct`
+--
+
+CREATE TABLE `tblblogproduct` (
+  `ID` int(5) NOT NULL,
+  `Title` varchar(250) DEFAULT NULL,
+  `Dimension` varchar(250) DEFAULT NULL,
+  `Orientation` varchar(100) DEFAULT NULL,
+  `Size` varchar(100) DEFAULT NULL,
+  `Artist` varchar(255) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `ArtMedium` varchar(255) DEFAULT NULL,
+  `SellingPricing` decimal(10,0) DEFAULT NULL,
+  `Description` varchar(255) DEFAULT NULL,
+  `Image` varchar(250) DEFAULT NULL,
+  `Image1` varchar(250) DEFAULT NULL,
+  `Image2` varchar(250) DEFAULT NULL,
+  `Image3` varchar(250) DEFAULT NULL,
+  `Image4` varchar(250) DEFAULT NULL,
+  `RefNum` int(10) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 

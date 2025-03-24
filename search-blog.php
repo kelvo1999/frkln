@@ -7,7 +7,7 @@ include('includes/dbconnection.php');
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
-      <title>Art Gallery Management System | Blog</title>
+      <title>Art Gallery Management System | Blog Page</title>
       
       <script>
          addEventListener("load", function () {
@@ -61,15 +61,16 @@ include('includes/dbconnection.php');
       <!--show Now-->  
       <section class="contact py-lg-4">
          <div class="container-fluid py-lg-5">
-            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center"><?php echo $_GET['Type'];?></h2>
+            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center">
+               Search Result Against keyword <span style="color:red">"<?php echo $_POST['search'];?>"</span></h2>
                <hr />
             <div class="row">
                <div class="side-bar col-lg-3">
                   <div class="search-hotel">
                      <h3 class="agileits-sear-head">Search Here..</h3>
-                     <form action="search.php" method="post">
-                        <input type="search" placeholder="Piece name..." name="search" required="">
-                        <input type="submit" name="submit">
+                     <form action="#" method="post">
+                        <input type="search" placeholder="Piece Name..." name="search" required="">
+                        <input type="submit" value=" ">
                      </form>
                   </div>
 							<!-- price range -->
@@ -77,7 +78,7 @@ include('includes/dbconnection.php');
 							<!-- //price range -->
                   <!--preference -->
                   <div class="left-side">
-                     <h3 class="agileits-sear-head">Blog Type</h3>
+                     <h3 class="agileits-sear-head">Art Type</h3>
                      <ul>
                         <li>
                            <?php
@@ -86,7 +87,7 @@ $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
-                           <a class="nav-link" href="blog.php?cid=<?php  echo $row['ID'];?>&&blogname=<?php  echo $row['Type'];?>"><span class="span"><?php  echo $row['Type'];?></span></a> <?php } ?>
+                           <a class="nav-link" href="blog.php?cid=<?php  echo $row['ID'];?>&&artname=<?php  echo $row['Type'];?>"><span class="span"><?php  echo $row['Type'];?></span></a> <?php } ?>
                         </li>
                        
                      </ul>
@@ -98,9 +99,9 @@ while ($row=mysqli_fetch_array($ret)) {
                <div class="left-ads-display col-lg-9">
                   <div class="row">
                   <?php
-                  $cid=$_GET['cid'];
-$ret=mysqli_query($con,"select tblblog.ID as fashionid,tblblog.Type as blogname,tblblogproduct.ID as fashid,tblblogproduct.Title,tblblogproduct.Image,tblblogproduct.Type from tblblogproduct join tblblog on tblblog.ID=tblblogproduct.Type where tblblogproduct.Type='$cid'");
-$cnt=1;
+                  $searchinput=$_POST['search'];
+                  $ret=mysqli_query($con,"select tblblog.ID as atid,tblblog.Type as typename,tblblogmaterial.ID as amid,tblblogmaterial.Material as amname,tblblogproduct.ID as apid,artist.Name,tblblogproduct.Title,tblblogproduct.Dimension,tblblogproduct.Orientation,tblblogproduct.Size,tblblogproduct.Designer,tblblogproduct.Type,tblblogproduct.ArtMedium,tblblogproduct.SellingPricing,tblblogproduct.Description,tblblogproduct.Image,tblblogproduct.Image1,tblblogproduct.Image2,tblblogproduct.Image3,tblblogproduct.Image4,tblblogproduct.RefNum,tblblogproduct.Type from tblblogproduct join tblblog on tblblog.ID=tblblogproduct.Type join tblblogmaterial on tblblogmaterial.ID=tblblogproduct.ArtMedium join artist on artist.ID=tblblogproduct.Artist where tblblogproduct.ID='$pid'");
+                  $cnt=1;
 $count=mysqli_num_rows($ret);
 if($count>0){ 
 while ($row=mysqli_fetch_array($ret)) {
@@ -113,21 +114,24 @@ while ($row=mysqli_fetch_array($ret)) {
                                  <img src="admin/images/<?php echo $row['Image'];?>" class="img-thumbnail" alt="">
                                  <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
-                                       <a href="single-blog.php?pid=<?php  echo $row['fashid'];?>" class="link-product-add-cart"> View Details</a>
+                                       <a href="single-product.php?pid=<?php  echo $row['apid'];?>" class="link-product-add-cart"> View Details</a>
                                     </div>
                                  </div>
-                                 <span class="product-new-top">New</span>
+                                 <!-- <span class="product-new-top">New</span> -->
                               </div>
                               <div class="item-info-product">
                                  <div class="info-product-price">
                                     <div class="grid_meta">
                                        <div class="product_price">
                                           <h4 >
-                                             <a href="single-blog.php?pid=<?php  echo $row['fashid'];?>" style="color:#000"><?php  echo $row['Title'];?></a>
+                                             <a href="single-product.php?pid=<?php  echo $row['apid'];?>" style="color:#000"><?php  echo $row['Title'];?></a>
                                           </h4>
                                           <div class="product_price">
                                              <h4>
-                                             <!-- <button class="btn btn-success"><a href="blog-enquiry.php?eid=<?php echo $row['fashid'];?>" style="color:#fff">Read</a></button></h4> -->
+                                             <!-- <button class="btn btn-success"><a href="art-enquiry.php?eid=<?php 
+                                            //  echo $row['apid'];
+                                             ?>
+                                             " style="color:#fff">Read</a></button></h4> -->
                                           </div>
                                        </div>
                                      

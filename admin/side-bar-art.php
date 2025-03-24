@@ -54,7 +54,7 @@
               <li><a class="" href="manage-art-product.php">Manage Product</a></li>
             </ul>
           </li>
-          <li class="sub-menu">
+          <!-- <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
                           <span>Designer</span>
@@ -98,52 +98,7 @@
               <li><a class="" href="add-fashion-product.php">Add Product</a></li>
               <li><a class="" href="manage-fashion-product.php">Manage Product</a></li>
             </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_desktop"></i>
-                          <span>Blog</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-artist.php">Add Artist</a></li>
-              <li><a class="" href="manage-blog-artist.php">Manage Artists</a></li>
-             
-            </ul>
-          </li>
-  <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Blog Type</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-type.php">Add Type</a></li>
-              <li><a class="" href="manage-blog-type.php">Manage Type</a></li>
-            </ul>
-          </li>
-<li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Genre</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-blog-genre.php">Add Genre</a></li>
-              <li><a class="" href="manage-blog-genre.php">Manage Genre</a></li>
-            </ul>
-          </li>
- <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Blog Pieces</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="add-fashion-product.php">Add Piece</a></li>
-              <li><a class="" href="manage-fashion-product.php">Manage Pieces</a></li>
-            </ul>
-          </li>
+          </li> -->
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_table"></i>
