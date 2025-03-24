@@ -140,8 +140,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="add-fashion-product.php">Add Piece</a></li>
-              <li><a class="" href="manage-fashion-product.php">Manage Pieces</a></li>
+              <li><a class="" href="add-piece.php">Add Piece</a></li>
+              <li><a class="" href="manage-piece-product.php">Manage Pieces</a></li>
             </ul>
           </li>
           <li class="sub-menu">

@@ -105,10 +105,26 @@ while ($row=mysqli_fetch_array($ret)) {
                           <?php } ?>
                         </div>
                      </li>
-                    
-                     <li class="nav-item">
-                        <a href="blog.php" class="nav-link">Blog</a>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Blog
+                        </a>
+                       
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <?php
+                                    $ret=mysqli_query($con,"select * from tblblog");
+$cnt=1;
+while ($row=mysqli_fetch_array($ret)) {
+
+?>
+                           <a class="nav-link" href="blog.php?cid=<?php  echo $row['ID'];?>&&blogname=<?php  echo $row['Type'];?>"><span class="span"><?php  echo $row['Type'];?></span></a>
+                          <?php } ?>
+                        </div>
                      </li>
+                    
+                     <!-- <li class="nav-item">
+                        <a href="blog.php" class="nav-link">Blog</a>
+                     </li> -->
                     
                     
                      

@@ -66,7 +66,7 @@ include('includes/dbconnection.php');
             <div class="inner-sec-shop pt-lg-4 pt-3">
                <?php
                $pid=$_GET['pid'];
-$ret=mysqli_query($con,"select tblblog.ID as atid,tblblog.Type as typename,tblblogmaterial.ID as amid,tblblogmaterial.Material as amname,tblblogproduct.ID as apid,artist.Name,tblblogproduct.Title,tblblogproduct.Dimension,tblblogproduct.Orientation,tblblogproduct.Size,tblblogproduct.Designer,tblblogproduct.Type,tblblogproduct.ArtMedium,tblblogproduct.SellingPricing,tblblogproduct.Description,tblblogproduct.Image,tblblogproduct.Image1,tblblogproduct.Image2,tblblogproduct.Image3,tblblogproduct.Image4,tblblogproduct.RefNum,tblblogproduct.Type from tblblogproduct join tblblog on tblblog.ID=tblblogproduct.Type join tblblogmaterial on tblblogmaterial.ID=tblblogproduct.ArtMedium join artist on artist.ID=tblblogproduct.Artist where tblblogproduct.ID='$pid'");
+$ret=mysqli_query($con,"select tblblog.ID as atid,tblblog.Type as typename,tblblogmaterial.ID as amid,tblblogmaterial.Material as amname,tblblogproduct.ID as apid,artist.Name,tblblogproduct.Title,tblblogproduct.Dimension,tblblogproduct.Orientation,tblblogproduct.Size,tblblogproduct.Artist,tblblogproduct.Type,tblblogproduct.ArtMedium,tblblogproduct.SellingPricing,tblblogproduct.Description,tblblogproduct.Image,tblblogproduct.Image1,tblblogproduct.Image2,tblblogproduct.Image3,tblblogproduct.Image4,tblblogproduct.RefNum,tblblogproduct.Type from tblblogproduct join tblblog on tblblog.ID=tblblogproduct.Type join tblblogmaterial on tblblogmaterial.ID=tblblogproduct.ArtMedium join artist on artist.ID=tblblogproduct.Artist where tblblogproduct.ID='$pid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 ?>
