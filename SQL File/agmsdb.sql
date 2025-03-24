@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2025 at 09:40 AM
+-- Generation Time: Mar 24, 2025 at 05:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,11 +32,27 @@ CREATE TABLE `artist` (
   `Name` varchar(250) DEFAULT NULL,
   `MobileNumber` bigint(10) DEFAULT NULL,
   `Email` varchar(250) DEFAULT NULL,
-  `Education` mediumtext DEFAULT NULL,
-  `Award` mediumtext DEFAULT NULL,
+  `Education` varchar(255) DEFAULT NULL,
+  `Award` varchar(255) DEFAULT NULL,
   `Profilepic` varchar(250) DEFAULT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `artist`
+--
+
+INSERT INTO `artist` (`ID`, `Name`, `MobileNumber`, `Email`, `Education`, `Award`, `Profilepic`, `CreationDate`) VALUES
+(1, 'Mohan Das', 7987987987, 'mohan@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in drawing and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', '809b27f63cc665ce7cbd89b4a4ffa575.jpg', '2022-12-21 10:31:25'),
+(2, 'Dev', 3287987987, 'dev@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(3, 'Kanha', 9687987987, 'kanha@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(4, 'Abir Rajwansh', 5687987987, 'abir@gmail.com', 'Completed his fine arts from klijfine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(5, 'Krisna Dutt', 9187987987, 'krish@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(6, 'Kajol Mannati', 8187987987, 'kajol@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(7, 'Meera Singh', 2987987987, 'meera@gmail.com', 'Fine Arts in Painting from College of Art, New Delhi in 2012,\r\nSpecialized in printmaking and ceramic.', 'award-winning artist, and has received a scholarship from the Ministry of Culture, Government of India in 2014 as well as the Jean-Claude Reynal Scholarship (France) in 2019.\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(8, 'Narayan Das', 9987987987, 'narayan@gmail.com', 'Completed his fine arts from hjai fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Young Artist Award in 2009, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36'),
+(0, 'Ken Walibora', 784566956, 'ken@wali.bora', 'He earned a Bachelor\'s degree in Literature and Swahili from the University of Nairobi and later completed his Master and Ph.D. in Comparative Literature from Ohio State University, USA.', 'Jomo Kenyatta Prize for Literature – He won this prestigious award for his novel Ndoto ya Amerika in 2003.\r\n\r\nBurton Award – Recognized for his excellence in Kiswahili literature.\r\n\r\nMoran of the Order of the Burning Spear (MBS) – Awarded by the Kenyan go', '809b27f63cc665ce7cbd89b4a4ffa575.jpg', '2025-03-24 14:46:49');
 
 -- --------------------------------------------------------
 
@@ -238,7 +254,8 @@ CREATE TABLE `tblblog` (
 INSERT INTO `tblblog` (`ID`, `Type`, `CreationDate`) VALUES
 (1, 'Poems', '2025-03-21 08:21:13'),
 (2, 'Stories', '2025-03-21 08:24:46'),
-(3, 'Words to Think About', '2025-03-21 08:25:00');
+(3, 'Words to Think About', '2025-03-21 08:25:00'),
+(0, 'Choir', '2025-03-24 14:58:22');
 
 -- --------------------------------------------------------
 
@@ -257,11 +274,9 @@ CREATE TABLE `tblblogmaterial` (
 --
 
 INSERT INTO `tblblogmaterial` (`ID`, `Material`, `CreationDate`) VALUES
-(1, 'Love', '2025-03-19 08:08:22'),
-(2, 'War', '2025-03-19 08:08:22'),
 (3, 'Romance', '2025-03-19 08:08:22'),
 (4, 'Politics', '2025-03-19 08:08:22'),
-(5, 'Religion', '2025-03-19 08:08:22');
+(0, 'Love', '2025-03-24 15:14:35');
 
 -- --------------------------------------------------------
 
@@ -279,7 +294,7 @@ CREATE TABLE `tblblogproduct` (
   `Type` varchar(50) DEFAULT NULL,
   `ArtMedium` varchar(255) DEFAULT NULL,
   `SellingPricing` decimal(10,0) DEFAULT NULL,
-  `Description` varchar(255) DEFAULT NULL,
+  `Description` longtext DEFAULT NULL,
   `Image` varchar(250) DEFAULT NULL,
   `Image1` varchar(250) DEFAULT NULL,
   `Image2` varchar(250) DEFAULT NULL,
@@ -288,6 +303,15 @@ CREATE TABLE `tblblogproduct` (
   `RefNum` int(10) DEFAULT NULL,
   `CreationDate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblblogproduct`
+--
+
+INSERT INTO `tblblogproduct` (`ID`, `Title`, `Dimension`, `Orientation`, `Size`, `Artist`, `Type`, `ArtMedium`, `SellingPricing`, `Description`, `Image`, `Image1`, `Image2`, `Image3`, `Image4`, `RefNum`, `CreationDate`) VALUES
+(1, 'Endless Love', 'couplet', 'Happy', 'couplet', '11', '1', '0', 1500, 'Like the sunrise paints the morning sky,\r\nYou light my world, my reason why.\r\nYour laughter sings, a melody sweet,\r\nA love so pure, so warm, complete.\r\n\r\nYour eyes, two stars that softly shine,\r\nGuiding me home, forever mine.\r\nIn your embrace, time fades ', '08182858c5199d31994f3d06d818449b1742831043.jpg', '', '', '', '', 235144577, '2025-03-24 15:44:03'),
+(2, 'Endless Love, My Allen', 'epic', 'Happy', 'epic', '0', '1', '0', 1500, 'Like the sunrise paints the morning sky,\r\nYou light my world, my reason why.\r\nYour laughter sings, a melody sweet,\r\nA love so pure, so warm, complete.\r\n\r\nYour eyes, two stars that softly shine,\r\nGuiding me home, forever mine.\r\nIn your embrace, time fades away,\r\nLost in your love, I long to stay.\r\n\r\nNo words can tell, no song convey,\r\nThe love I feel for you each day.\r\nThrough every storm, through joy and pain,\r\nWith you, my love, I shall remain.\r\n\r\nForever yours, in heart and soul,\r\nYou make my broken pieces whole.\r\nMy Allen, love so true, divine,\r\nForevermore, you\'re always mine.', '08182858c5199d31994f3d06d818449b1742832073.jpg', '', '', '', '', 106225457, '2025-03-24 16:01:13'),
+(4, 'Endless Love, My Allen', 'free_verse', 'Happy', 'free_verse', '0', '1', '0', 1500, 'Like the sunrise paints the morning sky,\r\nYou light my world, my reason why.\r\nYour laughter sings, a melody sweet,\r\nA love so pure, so warm, complete.\r\n\r\nYour eyes, two stars that softly shine,\r\nGuiding me home, forever mine.\r\nIn your embrace, time fades away,\r\nLost in your love, I long to stay.\r\n\r\nNo words can tell, no song convey,\r\nThe love I feel for you each day.\r\nThrough every storm, through joy and pain,\r\nWith you, my love, I shall remain.\r\n\r\nForever yours, in heart and soul,\r\nYou make my broken pieces whole.\r\nMy Allen, love so true, divine,\r\nForevermore, you\'re always mine.', '08182858c5199d31994f3d06d818449b1742832217.jpg', '', '', '', '', 787109964, '2025-03-24 16:03:37');
 
 -- --------------------------------------------------------
 
@@ -508,6 +532,12 @@ ALTER TABLE `tblarttype`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `tblblogproduct`
+--
+ALTER TABLE `tblblogproduct`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblenquiry`
 --
 ALTER TABLE `tblenquiry`
@@ -565,6 +595,12 @@ ALTER TABLE `tblartproduct`
 --
 ALTER TABLE `tblarttype`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `tblblogproduct`
+--
+ALTER TABLE `tblblogproduct`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tblenquiry`
