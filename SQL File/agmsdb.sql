@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2025 at 05:05 PM
+-- Generation Time: Mar 28, 2025 at 05:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -86,6 +86,38 @@ INSERT INTO `designer` (`ID`, `Name`, `MobileNumber`, `Email`, `Education`, `Awa
 (8, 'Narayan Das', 9987987987, 'narayan@gmail.com', 'Completed his fine arts from hjai fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Young Artist Award in 2009, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
 (11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36'),
 (0, 'Click Bait', 125469857, 'click@bait.com', 'A bachelors degree in marketing', 'Graduate', 'afbba823125a264290029f5b571c75c5.jpg', '2025-03-20 11:53:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `founder`
+--
+
+CREATE TABLE `founder` (
+  `ID` int(10) NOT NULL,
+  `Name` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `Education` mediumtext DEFAULT NULL,
+  `Award` mediumtext DEFAULT NULL,
+  `Profilepic` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `founder`
+--
+
+INSERT INTO `founder` (`ID`, `Name`, `MobileNumber`, `Email`, `Education`, `Award`, `Profilepic`, `CreationDate`) VALUES
+(1, 'Mohan Das', 7987987987, 'mohan@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in drawing and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ecebbecf28c2692aeb021597fbddb174.jpg', '2022-12-21 10:31:25'),
+(2, 'Dev', 3287987987, 'dev@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(3, 'Kanha', 9687987987, 'kanha@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(4, 'Abir Rajwansh', 5687987987, 'abir@gmail.com', 'Completed his fine arts from klijfine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(5, 'Krisna Dutt', 9187987987, 'krish@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(6, 'Kajol Mannati', 8187987987, 'kajol@gmail.com', 'Completed his fine arts from kg fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Hugo Boss Prize in 2019, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(7, 'Meera Singh', 2987987987, 'meera@gmail.com', 'Fine Arts in Painting from College of Art, New Delhi in 2012,\r\nSpecialized in printmaking and ceramic.', 'award-winning artist, and has received a scholarship from the Ministry of Culture, Government of India in 2014 as well as the Jean-Claude Reynal Scholarship (France) in 2019.\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(8, 'Narayan Das', 9987987987, 'narayan@gmail.com', 'Completed his fine arts from hjai fine arts college.\r\nSpecialized in painting and ceramic.', 'Winner of Young Artist Award in 2009, MacArthur Fellowship\r\n', 'ad04ad2d96ae326a9ca9de47d9e2fc74.jpg', '2022-12-21 10:31:25'),
+(11, 'Hope Wawuda', 791600506, 'hope@wawuda.com', 'Art and Design ', 'Bsc Art and Desin', '003162f6a5e01b63df4a93241076d64e.jpg', '2025-02-10 19:06:36');
 
 -- --------------------------------------------------------
 
@@ -254,8 +286,7 @@ CREATE TABLE `tblblog` (
 INSERT INTO `tblblog` (`ID`, `Type`, `CreationDate`) VALUES
 (1, 'Poems', '2025-03-21 08:21:13'),
 (2, 'Stories', '2025-03-21 08:24:46'),
-(3, 'Words to Think About', '2025-03-21 08:25:00'),
-(0, 'Choir', '2025-03-24 14:58:22');
+(3, 'Words to Think About', '2025-03-21 08:25:00');
 
 -- --------------------------------------------------------
 
@@ -473,6 +504,101 @@ INSERT INTO `tblfashionproduct` (`ID`, `Title`, `Dimension`, `Orientation`, `Siz
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblfoundation`
+--
+
+CREATE TABLE `tblfoundation` (
+  `ID` int(5) NOT NULL,
+  `Type` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfoundation`
+--
+
+INSERT INTO `tblfoundation` (`ID`, `Type`, `CreationDate`) VALUES
+(1, 'Happy Trains', '2025-03-27 11:02:41'),
+(2, 'Talents', '2025-03-27 11:08:16'),
+(3, 'e-Game Tournaments', '2025-03-27 11:08:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfoundationenquiry`
+--
+
+CREATE TABLE `tblfoundationenquiry` (
+  `ID` int(10) NOT NULL,
+  `EnquiryNumber` varchar(10) NOT NULL,
+  `Artpdid` int(9) DEFAULT NULL,
+  `FullName` varchar(120) DEFAULT NULL,
+  `Email` varchar(250) DEFAULT NULL,
+  `MobileNumber` bigint(10) DEFAULT NULL,
+  `Message` varchar(250) DEFAULT NULL,
+  `EnquiryDate` timestamp NULL DEFAULT current_timestamp(),
+  `Status` varchar(10) DEFAULT NULL,
+  `AdminRemark` varchar(200) NOT NULL,
+  `AdminRemarkdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfoundationmaterial`
+--
+
+CREATE TABLE `tblfoundationmaterial` (
+  `ID` int(5) NOT NULL,
+  `Material` varchar(250) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfoundationmaterial`
+--
+
+INSERT INTO `tblfoundationmaterial` (`ID`, `Material`, `CreationDate`) VALUES
+(0, 'Action', '2025-03-28 10:53:36'),
+(0, 'Fantasy', '2025-03-28 11:00:28'),
+(0, 'Horror', '2025-03-28 11:00:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblfoundationproduct`
+--
+
+CREATE TABLE `tblfoundationproduct` (
+  `ID` int(5) NOT NULL,
+  `Title` varchar(250) DEFAULT NULL,
+  `Dimension` varchar(250) DEFAULT NULL,
+  `Orientation` varchar(100) DEFAULT NULL,
+  `Size` varchar(100) DEFAULT NULL,
+  `Artist` varchar(255) DEFAULT NULL,
+  `Type` varchar(50) DEFAULT NULL,
+  `ArtMedium` varchar(255) DEFAULT NULL,
+  `SellingPricing` decimal(10,0) DEFAULT NULL,
+  `Description` longtext DEFAULT NULL,
+  `Image` varchar(250) DEFAULT NULL,
+  `Image1` varchar(250) DEFAULT NULL,
+  `Image2` varchar(250) DEFAULT NULL,
+  `Image3` varchar(250) DEFAULT NULL,
+  `Image4` varchar(250) DEFAULT NULL,
+  `RefNum` int(10) DEFAULT NULL,
+  `CreationDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tblfoundationproduct`
+--
+
+INSERT INTO `tblfoundationproduct` (`ID`, `Title`, `Dimension`, `Orientation`, `Size`, `Artist`, `Type`, `ArtMedium`, `SellingPricing`, `Description`, `Image`, `Image1`, `Image2`, `Image3`, `Image4`, `RefNum`, `CreationDate`) VALUES
+(0, 'Visit to Karura', 'haiku', 'Happy', 'haiku', '11', '1', '0', 2500, 'Join us as we embark to KArura forest for a thanks giving event.', '151ff83e915b7e7f0f03a6cccf49f39e1743179492.jpg', '', '', '', '', 730667668, '2025-03-28 16:31:32');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblpage`
 --
 
@@ -557,6 +683,12 @@ ALTER TABLE `tblfashionproduct`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `tblfoundation`
+--
+ALTER TABLE `tblfoundation`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tblpage`
 --
 ALTER TABLE `tblpage`
@@ -619,6 +751,12 @@ ALTER TABLE `tblfashionmaterial`
 --
 ALTER TABLE `tblfashionproduct`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `tblfoundation`
+--
+ALTER TABLE `tblfoundation`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblpage`
