@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Update the user to set verified as true and clear the OTP
         $update_query = "UPDATE client SET verified=TRUE, otp=NULL WHERE email='$email'";
         if ($conn->query($update_query) === TRUE) {
-            echo "<script>alert('Email verified successfully! You can now log in.'); window.location.href = 'client.php';</script>";
+            echo "<script>alert('Email verified successfully! You can now log in.'); window.location.href = 'login.php';</script>";
         } else {
             echo "<script>alert('Error verifying email. Please try again.'); window.history.back();</script>";
         }

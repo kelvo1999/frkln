@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if the email already exists
     $check_email_query = "SELECT * FROM client WHERE email='$email'";
-    $email_result = $conn->query($check_email_query);
+    $email_result = $con->query($check_email_query);
 
     if ($email_result->num_rows > 0) {
         echo "<script>alert('This email is already registered. Please use a different email.'); window.history.back();</script>";
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if the phone number already exists
     $check_phone_query = "SELECT * FROM client WHERE phone='$phone'";
-    $phone_result = $conn->query($check_phone_query);
+    $phone_result = $con->query($check_phone_query);
 
     if ($phone_result->num_rows > 0) {
         echo "<script>alert('This phone number is already registered. Please use a different phone number.'); window.history.back();</script>";
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO client (first_name, last_name, email, phone, password, gender, location, age, otp)
             VALUES ('$first_name', '$last_name', '$email', '$phone', '$hashed_password', '$gender', '$location', '$age', '$otp')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($con->query($sql) === TRUE) {
         // Send OTP to the user's email using PHPMailer
         $mail = new PHPMailer(true);
 
@@ -79,11 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Failed to send OTP. Please try again.'); window.history.back();</script>";
         }
     } else {
-        echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "'); window.history.back();</script>";
+        echo "<script>alert('Error: " . $sql . "<br>" . $con->error . "'); window.history.back();</script>";
     }
 
     // Close the connection
-    $conn->close();
+    $con->close();
 }
 ?>
 
