@@ -102,7 +102,7 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>Blog</span>
+                          <span>Writings</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
@@ -142,6 +142,51 @@
             <ul class="sub">
               <li><a class="" href="add-piece.php">Add Piece</a></li>
               <li><a class="" href="manage-piece-product.php">Manage Pieces</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Foundation</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-foundation-artist.php">Add Artist</a></li>
+              <li><a class="" href="manage-foundation-artist.php">Manage Artists</a></li>
+             
+            </ul>
+          </li>
+  <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Type</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-foundation-type.php">Add Type</a></li>
+              <li><a class="" href="manage-foundation-type.php">Manage Type</a></li>
+            </ul>
+          </li>
+<li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Genre</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-foundation-genre.php">Add Genre</a></li>
+              <li><a class="" href="manage-foundation-genre.php">Manage Genre</a></li>
+            </ul>
+          </li>
+ <li class="sub-menu">
+            <a href="javascript:;" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Outcomes</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+            <ul class="sub">
+              <li><a class="" href="add-foundation-piece.php">Add Outcome</a></li>
+              <li><a class="" href="manage-foundation-piece-product.php">Manage Outcome</a></li>
             </ul>
           </li>
           <li class="sub-menu">

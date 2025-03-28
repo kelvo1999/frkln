@@ -50,7 +50,7 @@ include('includes/dbconnection.php');
                            <div class="slider-info ">
                               <h5>Pick The Best Art For <br>Your Choice</h5>
                               <div class="bottom-info">
-                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                                 <p>FRNKL is a vibrant hub that celebrates creativity through an art gallery, donations program, talent showcase, and a blog, fostering artistic growth, community engagement, and cultural exchange.</p>
                               </div>
                               <div class="outs_more-buttn">
                                  <a href="about.php">Read More</a>
@@ -65,7 +65,7 @@ include('includes/dbconnection.php');
                            <div class="slider-info ">
                               <h5>Sort Art And Painting<br>For Your Choice</h5>
                               <div class="bottom-info">
-                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                                 <p>FRNKL is a vibrant hub that celebrates creativity through an art gallery, donations program, talent showcase, and a blog, fostering artistic growth, community engagement, and cultural exchange.</p>
                               </div>
                               <div class="outs_more-buttn">
                                  <a href="about.php">Read More</a>
@@ -80,7 +80,7 @@ include('includes/dbconnection.php');
                            <div class="slider-info">
                               <h5>Best Art And Painting<br> For Your Choice</h5>
                               <div class="bottom-info">
-                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolorL orem ipsum dolor sit amet eget dolor</p>
+                                 <p>FRNKL is a vibrant hub that celebrates creativity through an art gallery, donations program, talent showcase, and a blog, fostering artistic growth, community engagement, and cultural exchange.</p>
                               </div>
                               <div class="outs_more-buttn">
                                  <a href="about.php">Read More</a>
